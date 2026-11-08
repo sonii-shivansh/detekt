@@ -18,7 +18,7 @@ class FindingsAssert(actual: List<Finding>) :
     AbstractListAssert<FindingsAssert, List<Finding>, Finding, FindingAssert>(actual, FindingsAssert::class.java) {
 
     override fun newAbstractIterableAssert(iterable: MutableIterable<Finding>): FindingsAssert =
-        throw UnsupportedOperationException("not implemented")
+        FindingsAssert(iterable.toList())
 
     override fun toAssert(value: Finding?, description: String?): FindingAssert = FindingAssert(value).`as`(description)
 }
